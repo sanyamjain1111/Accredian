@@ -30,6 +30,7 @@
 | Environment | URL |
 |---|---|
 | Production | https://accredian-gilt.vercel.app |
+| GitHub Repository | https://github.com/sanyamjain1111/Accredian |
 | Vercel Preview | Automatically created for every push to a non-main branch |
 
 ---
