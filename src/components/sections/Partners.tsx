@@ -30,10 +30,12 @@ export function Partners() {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
-        <div className="flex gap-16 animate-marquee w-max items-center py-4">
+        <div className="flex gap-16 animate-marquee w-max items-center py-4" role="list" aria-label="Partner logos">
           {allPartners.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
+              role="listitem"
+              aria-hidden={i >= partners.length ? "true" : undefined}
               className="flex items-center justify-center h-14 shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
             >
               <Image

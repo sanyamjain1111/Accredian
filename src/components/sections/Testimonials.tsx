@@ -173,7 +173,13 @@ export function Testimonials() {
         {/* Main layout */}
         <div className="mt-12 grid lg:grid-cols-5 gap-6">
           {/* Featured */}
-          <div className="lg:col-span-3 relative min-h-[340px]">
+          <div
+            className="lg:col-span-3 relative min-h-[340px]"
+            role="region"
+            aria-label="Customer testimonial"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {testimonials.map((t, i) => (
               <div
                 key={t.name}
@@ -190,11 +196,11 @@ export function Testimonials() {
 
             {/* Prev / Next */}
             <div className="absolute bottom-6 right-6 flex items-center gap-2 z-10">
-              <button onClick={prev} aria-label="Previous" className="w-9 h-9 rounded-full bg-primary-600/80 hover:bg-primary-600 flex items-center justify-center text-white transition-colors">
-                <ChevronLeft className="w-4 h-4" />
+              <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 rounded-full bg-primary-600/80 hover:bg-primary-600 flex items-center justify-center text-white transition-colors">
+                <ChevronLeft className="w-4 h-4" aria-hidden="true" />
               </button>
-              <button onClick={next} aria-label="Next" className="w-9 h-9 rounded-full bg-primary-600/80 hover:bg-primary-600 flex items-center justify-center text-white transition-colors">
-                <ChevronRight className="w-4 h-4" />
+              <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 rounded-full bg-primary-600/80 hover:bg-primary-600 flex items-center justify-center text-white transition-colors">
+                <ChevronRight className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
           </div>

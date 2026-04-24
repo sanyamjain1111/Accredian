@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { ChevronDown } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/utils";
@@ -53,15 +53,22 @@ const faqs: { category: string; items: { q: string; a: string }[] }[] = [
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
+  const uid = useId();
+  const btnId = `faq-btn-${uid}`;
+  const panelId = `faq-panel-${uid}`;
+
   return (
     <div className="border border-neutral-200 rounded-xl overflow-hidden">
       <button
+        id={btnId}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-neutral-50 transition-colors cursor-pointer"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-controls={panelId}
       >
         <span className="font-semibold text-neutral-800 text-sm md:text-base">{q}</span>
         <ChevronDown
+          aria-hidden="true"
           className={cn(
             "w-5 h-5 text-neutral-400 shrink-0 transition-transform duration-200",
             open && "rotate-180"
@@ -69,6 +76,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         />
       </button>
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={btnId}
         className={cn(
           "overflow-hidden transition-all duration-300",
           open ? "max-h-96" : "max-h-0"

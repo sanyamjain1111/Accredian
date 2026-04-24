@@ -68,15 +68,47 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Accredian Enterprise",
+  url: "https://enterprise.accredian.com",
+  logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/rel.png",
+  description:
+    "Cultivate high-performance teams through expert learning. Tailored corporate training programs in AI, leadership, data, and more.",
+  sameAs: [
+    "https://www.linkedin.com/company/accredian",
+    "https://twitter.com/accredianedu",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-9079553088",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: "en",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="antialiased">
+        {/* Skip navigation — keyboard accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:font-semibold focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ScrollProgress />
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <BackToTop />
       </body>

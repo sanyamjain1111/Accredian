@@ -132,11 +132,12 @@ export function Hero() {
               </p>
               <div className="flex items-center gap-5 flex-wrap">
                 {trustLogos.map((logo) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     key={logo.name}
                     src={logo.src}
                     alt={logo.name}
+                    width={80}
+                    height={28}
                     className="h-7 w-auto object-contain grayscale opacity-50 hover:opacity-80 hover:grayscale-0 transition-all duration-300"
                   />
                 ))}
@@ -168,7 +169,7 @@ export function Hero() {
             {floatingStats.map(({ icon: Icon, value, label, color, delay }, i) => (
               <div
                 key={label}
-                className={`absolute bg-white rounded-2xl px-4 py-3.5 shadow-elevated ring-1 ring-neutral-200/80 flex items-center gap-3 ${
+                className={`absolute bg-white rounded-2xl px-4 py-3.5 shadow-elevated ring-1 ring-neutral-200/80 hidden lg:flex items-center gap-3 ${
                   mounted ? `animate-scale-in ${delay}` : "opacity-0"
                 } animate-float`}
                 style={{

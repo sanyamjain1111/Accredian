@@ -93,6 +93,7 @@ export function Navbar() {
       )}
     >
       <nav
+        aria-label="Main navigation"
         className={cn(
           "container-xl flex items-center justify-between transition-all duration-300",
           scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
@@ -120,6 +121,7 @@ export function Navbar() {
               <a
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
+                aria-current={isActive(link.href) ? "true" : undefined}
                 className={cn(
                   "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200",
                   isActive(link.href)
@@ -198,6 +200,7 @@ export function Navbar() {
               <a
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
+                aria-current={isActive(link.href) ? "true" : undefined}
                 className={cn(
                   "flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-colors",
                   isActive(link.href)

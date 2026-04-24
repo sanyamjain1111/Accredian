@@ -55,10 +55,14 @@ export function CourseSegmentation() {
 
         <div className="mt-12 grid lg:grid-cols-2 gap-10 items-center">
           {/* Tab list */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3" role="tablist" aria-label="Course segmentation types">
             {segments.map((seg) => (
               <button
                 key={seg.id}
+                id={`tab-${seg.id}`}
+                role="tab"
+                aria-selected={active === seg.id}
+                aria-controls={`panel-${seg.id}`}
                 onClick={() => setActive(seg.id)}
                 className={cn(
                   "flex flex-col gap-1 text-left p-5 rounded-2xl border-2 transition-all duration-200 cursor-pointer",
@@ -76,7 +80,12 @@ export function CourseSegmentation() {
           </div>
 
           {/* Active panel */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated">
+          <div
+            id={`panel-${current.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${current.id}`}
+            className="bg-white rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated"
+          >
             <div className="relative h-56 w-full">
               <Image
                 src={current.img}
