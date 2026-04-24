@@ -29,7 +29,7 @@
 
 | Environment | URL |
 |---|---|
-| Production | https://enterprise.accredian.com |
+| Production | https://accredian-gilt.vercel.app |
 | Vercel Preview | Automatically created for every push to a non-main branch |
 
 ---
@@ -154,7 +154,7 @@ accredian-enterprise/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-org/accredian-enterprise.git
+git clone https://github.com/sanyamjain1111/Accredian.git
 cd accredian-enterprise
 
 # 2. Install dependencies
@@ -213,7 +213,7 @@ cp .env.example .env.local
 
 ### One-click deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-org/accredian-enterprise)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sanyamjain1111/Accredian)
 
 ### Manual deployment
 

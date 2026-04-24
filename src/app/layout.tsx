@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     "leadership development",
     "Accredian",
   ],
-  authors: [{ name: "Accredian", url: "https://enterprise.accredian.com" }],
+  authors: [{ name: "Accredian", url: "https://accredian-gilt.vercel.app" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://enterprise.accredian.com",
+    url: "https://accredian-gilt.vercel.app",
     siteName: "Accredian Enterprise",
     title: "Accredian Enterprise — Next-Gen Expertise For Your Enterprise",
     description:
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: {
-    canonical: "https://enterprise.accredian.com",
+    canonical: "https://accredian-gilt.vercel.app",
   },
 };
 
@@ -72,7 +72,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Accredian Enterprise",
-  url: "https://enterprise.accredian.com",
+  url: "https://accredian-gilt.vercel.app",
   logo: "https://storage.googleapis.com/accredian-assets/Frontend_Assests/Images/Accredian-react-site-images/other/rel.png",
   description:
     "Cultivate high-performance teams through expert learning. Tailored corporate training programs in AI, leadership, data, and more.",
